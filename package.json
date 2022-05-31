@@ -1,6 +1,6 @@
 {
-  "name": "nestjs-query-module-codegen",
-  "version": "1.0.0",
+  "name": "@nanopang/nestjs-query-module-codegen",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "dependencies": {
