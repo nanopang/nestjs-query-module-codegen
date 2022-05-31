@@ -4,7 +4,8 @@ Step 1:
   npm i -g @nanopang/nqmo-codegen
   
 Step 2:
-  nqmo [moduleName] [moduleName2]...
+  nqmo moduleName moduleName2 moduleName3
   
 Step 3:
-  take a coffee break ☕️
+  have a coffee break ☕️
+
