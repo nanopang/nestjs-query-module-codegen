@@ -1,5 +1,5 @@
 {
-  "name": "@nano/nestjs-query-module-codegen",
+  "name": "nestjs-query-module-codegen",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
