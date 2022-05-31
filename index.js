@@ -4,7 +4,7 @@ const pluralize = require("pluralize");
 
 const codegen = () => {
   const basePath = process.cwd() + "/src/modules";
-
+  const templatePath = __dirname + "/template";
   const fileNames = process.argv.slice(2, process.argv.length);
 
   fileNames.forEach((fileName) => {
@@ -23,38 +23,50 @@ const codegen = () => {
     }
 
     //Module
-    fs.readFile("./template/template.module", "utf-8", function (err, data) {
-      if (err) throw err;
-      data = data.replace(/Template/g, pascalCase(fileName));
-      data = data.replace(/template/g, paramCase(fileName));
-      fs.writeFileSync(
-        `${modulePath}/${paramCase(fileName)}.module.ts`,
-        data,
-        "utf-8"
-      );
-    });
+    fs.readFile(
+      templatePath + "/template.module",
+      "utf-8",
+      function (err, data) {
+        if (err) throw err;
+        data = data.replace(/Template/g, pascalCase(fileName));
+        data = data.replace(/template/g, paramCase(fileName));
+        fs.writeFileSync(
+          `${modulePath}/${paramCase(fileName)}.module.ts`,
+          data,
+          "utf-8"
+        );
+      }
+    );
 
     //Service
-    fs.readFile("./template/template.service", "utf-8", function (err, data) {
-      if (err) throw err;
-      data = data.replace(/Template/g, pascalCase(fileName));
-      fs.writeFileSync(
-        `${modulePath}/${paramCase(fileName)}.service.ts`,
-        data,
-        "utf-8"
-      );
-    });
+    fs.readFile(
+      templatePath + "/template.service",
+      "utf-8",
+      function (err, data) {
+        if (err) throw err;
+        data = data.replace(/Template/g, pascalCase(fileName));
+        fs.writeFileSync(
+          `${modulePath}/${paramCase(fileName)}.service.ts`,
+          data,
+          "utf-8"
+        );
+      }
+    );
 
     //DTO
-    fs.readFile("./template/template.gql.dto", "utf-8", function (err, data) {
-      if (err) throw err;
-      data = data.replace(/Template/g, pascalCase(fileName));
-      fs.writeFileSync(
-        `${modulePath}/dto/${paramCase(fileName)}.gql.dto.ts`,
-        data,
-        "utf-8"
-      );
-    });
+    fs.readFile(
+      templatePath + "/template.gql.dto",
+      "utf-8",
+      function (err, data) {
+        if (err) throw err;
+        data = data.replace(/Template/g, pascalCase(fileName));
+        fs.writeFileSync(
+          `${modulePath}/dto/${paramCase(fileName)}.gql.dto.ts`,
+          data,
+          "utf-8"
+        );
+      }
+    );
 
     //Entity
     fs.readFile("./template/template.entity", "utf-8", function (err, data) {
