@@ -1,0 +1,41 @@
+{
+  "name": "@nano/nestjs-query-module-codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "camel-case": "^4.1.2",
+    "capital-case": "^1.0.4",
+    "change-case": "^4.1.2",
+    "constant-case": "^3.0.4",
+    "dot-case": "^3.0.4",
+    "header-case": "^2.0.4",
+    "lower-case": "^2.0.2",
+    "no-case": "^3.0.4",
+    "param-case": "^3.0.4",
+    "pascal-case": "^3.1.2",
+    "path-case": "^3.0.4",
+    "pluralize": "^8.0.0",
+    "sentence-case": "^3.0.4",
+    "snake-case": "^3.0.4",
+    "tslib": "^2.4.0",
+    "upper-case": "^2.0.2",
+    "upper-case-first": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanopang/nestjs-query-module-codegen.git"
+  },
+  "keywords": [
+    "nestjs-query-module-codegen"
+  ],
+  "author": "nanopang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanopang/nestjs-query-module-codegen/issues"
+  },
+  "homepage": "https://github.com/nanopang/nestjs-query-module-codegen#readme"
+}
