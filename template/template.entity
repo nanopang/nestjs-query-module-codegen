@@ -1,0 +1,11 @@
+import { BaseEntity } from '@entities/base';
+import { ObjectType } from '@nestjs/graphql';
+import { FilterableField } from '@nestjs-query/query-graphql';
+import { hashPassword } from '@providers/bcrypt.service';
+import { BeforeInsert, Column, Entity } from 'typeorm';
+
+@ObjectType()
+@Entity('templates')
+export class TemplateEntity extends BaseEntity {
+  
+}

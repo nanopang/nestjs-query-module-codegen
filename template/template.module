@@ -1,0 +1,28 @@
+import { TemplateEntity } from '@entities';
+import { Module } from '@nestjs/common';
+import { NestjsQueryGraphQLModule } from '@nestjs-query/query-graphql';
+import { NestjsQueryTypeOrmModule } from '@nestjs-query/query-typeorm';
+
+import { TemplateService } from './template.service';
+import { TemplateDto, CreateTemplateInputDTO, UpdateTemplateInputDTO } from './dto';
+
+@Module({
+  imports: [
+    NestjsQueryGraphQLModule.forFeature({
+      imports: [NestjsQueryTypeOrmModule.forFeature([TemplateEntity])],
+      services: [TemplateService],
+      resolvers: [
+        {
+          ServiceClass: TemplateService,
+          DTOClass: TemplateDto,
+          EntityClass: TemplateEntity,
+          CreateDTOClass: CreateTemplateInputDTO,
+          UpdateDTOClass: UpdateTemplateInputDTO,
+          guards: [],
+        },
+      ],
+    }),
+  ],
+  controllers: [],
+})
+export class TemplateModule {}
