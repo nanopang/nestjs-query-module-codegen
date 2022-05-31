@@ -69,23 +69,31 @@ const codegen = () => {
     );
 
     //Entity
-    fs.readFile("./template/template.entity", "utf-8", function (err, data) {
-      if (err) throw err;
-      data = data.replace(/Template/g, pascalCase(fileName));
-      data = data.replace(/templates/g, pluralize(camelCase(fileName)));
-      fs.writeFileSync(
-        `${modulePath}/entity/${paramCase(fileName)}.entity.ts`,
-        data,
-        "utf-8"
-      );
-    });
+    fs.readFile(
+      templatePath + "/template.entity",
+      "utf-8",
+      function (err, data) {
+        if (err) throw err;
+        data = data.replace(/Template/g, pascalCase(fileName));
+        data = data.replace(/templates/g, pluralize(camelCase(fileName)));
+        fs.writeFileSync(
+          `${modulePath}/entity/${paramCase(fileName)}.entity.ts`,
+          data,
+          "utf-8"
+        );
+      }
+    );
 
     //DTO Index
-    fs.readFile("./template/template.dto.index", "utf-8", function (err, data) {
-      if (err) throw err;
-      data = data.replace(/template/g, paramCase(fileName));
-      fs.writeFileSync(`${modulePath}/dto/index.ts`, data, "utf-8");
-    });
+    fs.readFile(
+      templatePath + "/template.dto.index",
+      "utf-8",
+      function (err, data) {
+        if (err) throw err;
+        data = data.replace(/template/g, paramCase(fileName));
+        fs.writeFileSync(`${modulePath}/dto/index.ts`, data, "utf-8");
+      }
+    );
   });
 };
 
