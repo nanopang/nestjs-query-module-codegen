@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-const codegen = require("../index.js");
-
-codegen();
+require("../index.js");

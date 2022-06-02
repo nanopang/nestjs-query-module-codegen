@@ -9,7 +9,7 @@ const codegen = () => {
 
   fileNames.forEach((fileName) => {
     if (!fileName) throw Error("Invalid Name");
-    const modulePath = `${basePath}/${fileName}`;
+    const modulePath = `${basePath}/${paramCase(fileName)}`;
 
     //Create Folders
     if (!fs.existsSync(modulePath)) {
@@ -96,5 +96,5 @@ const codegen = () => {
     );
   });
 };
-
+codegen();
 module.exports = codegen;
