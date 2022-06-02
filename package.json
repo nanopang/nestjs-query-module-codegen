@@ -1,6 +1,6 @@
 {
   "name": "@nanopang/nqmo-codegen",
-  "version": "1.0.9",
+  "version": "1.0.91",
   "description": "",
   "main": "index.js",
   "dependencies": {
